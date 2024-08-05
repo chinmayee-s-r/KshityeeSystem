@@ -9,6 +9,8 @@ package com.mycompany.kshityeesystem;
  * @author ADMIN
  */
 public class HomePage extends javax.swing.JFrame {
+    
+    JPanelLoader jpload = new JPanelLoader();
 
     /**
      * Creates new form HomePage
@@ -38,7 +40,7 @@ public class HomePage extends javax.swing.JFrame {
         jToggleButton6 = new javax.swing.JToggleButton();
         jToggleButton7 = new javax.swing.JToggleButton();
         jToggleButton8 = new javax.swing.JToggleButton();
-        jPanel2 = new javax.swing.JPanel();
+        Panel_Load = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,7 +49,12 @@ public class HomePage extends javax.swing.JFrame {
 
         HP_Button_Group.add(jToggleButton1);
         jToggleButton1.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        jToggleButton1.setText("Vendor");
+        jToggleButton1.setText("Supplier");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         HP_Button_Group.add(jToggleButton2);
         jToggleButton2.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -61,10 +68,20 @@ public class HomePage extends javax.swing.JFrame {
         HP_Button_Group.add(jToggleButton3);
         jToggleButton3.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         jToggleButton3.setText("Product");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
 
         HP_Button_Group.add(jToggleButton4);
         jToggleButton4.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         jToggleButton4.setText("Employee");
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
 
         HP_Button_Group.add(jToggleButton5);
         jToggleButton5.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -121,16 +138,16 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Panel_Load.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Panel_LoadLayout = new javax.swing.GroupLayout(Panel_Load);
+        Panel_Load.setLayout(Panel_LoadLayout);
+        Panel_LoadLayout.setHorizontalGroup(
+            Panel_LoadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1164, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Panel_LoadLayout.setVerticalGroup(
+            Panel_LoadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -158,7 +175,7 @@ public class HomePage extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Panel_Load, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -168,7 +185,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Panel_Load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
         );
@@ -177,8 +194,32 @@ public class HomePage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
+        // Customer Load
+        
+        Customer cus  = new Customer();
+        jpload.jPanelLoader(Panel_Load, cus);
+        
+        
     }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        Supplier sp = new Supplier();
+        jpload.jPanelLoader(Panel_Load, sp);
+        
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        // TODO add your handling code here:
+        Employee emp = new Employee();
+        jpload.jPanelLoader(Panel_Load, emp);
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+        Product pro = new Product();
+        jpload.jPanelLoader(Panel_Load, pro);
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,8 +258,8 @@ public class HomePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup HP_Button_Group;
+    private javax.swing.JPanel Panel_Load;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
